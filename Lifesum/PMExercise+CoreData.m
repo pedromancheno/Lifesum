@@ -1,21 +1,20 @@
-
 //
-//  PMCategory+PM.m
+//  PMExercise+CoreData.m
 //  Lifesum
 //
 //  Created by Pedro Mancheno on 5/24/14.
 //  Copyright (c) 2014 Pedro Mancheno. All rights reserved.
 //
 
-#import "PMCategory+CoreData.h"
+#import "PMExercise+CoreData.h"
 
 #import "PMLocalizedName+CoreData.h"
 
-@interface PMCategory () <PMNameLocalizing>
+@interface PMExercise () <PMNameLocalizing>
 
 @end
 
-@implementation PMCategory (CoreData)
+@implementation PMExercise (CoreData)
 
 + (NSString *)dictionaryKey
 {
@@ -24,17 +23,21 @@
 
 + (NSString *)primaryKey
 {
-    return @"categoryID";
+    return @"exerciseID";
 }
 
-+ (void)mapDictionary:(NSDictionary *)dictionary toObject:(PMCategory *)object
++ (void)mapDictionary:(NSDictionary *)dictionary toObject:(PMExercise *)object
 {
-    object.categoryID = dictionary[@"oid"];
-    object.name = dictionary[@"category"];
-    object.headCategoryID = dictionary[@"headcategoryid"];
-    object.servingsCategory = dictionary[@"servingscategory"];
+    object.exerciseID = dictionary[@"oid"];
+    object.isAddedByUser = dictionary[@"addedbyuser"];
+    object.calories = dictionary[@"calories"];
+    object.isCustom = dictionary[@"custom"];
+    object.isRemoved = dictionary[@"deleted"];
+    object.isDownloaded = dictionary[@"downloaded"];
+    object.isHidden = dictionary[@"hidden"];
     object.photoVersion = dictionary[@"photo_version"];
-
+    object.name = dictionary[@"title"];
+    
     NSTimeInterval lastUpdatedInterval = [dictionary[@"lastupdated"] doubleValue];
     object.lastUpdatedDate = [NSDate dateWithTimeIntervalSince1970:lastUpdatedInterval];
     

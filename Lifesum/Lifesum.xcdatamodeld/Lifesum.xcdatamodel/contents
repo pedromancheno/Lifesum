@@ -7,15 +7,30 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photoVersion" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="servingsCategory" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <relationship name="localizedNames" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PMCategoryLocalizedName" inverseName="category" inverseEntity="PMCategoryLocalizedName" syncable="YES"/>
+        <relationship name="localizedNames" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PMLocalizedName" inverseName="category" inverseEntity="PMLocalizedName" syncable="YES"/>
     </entity>
-    <entity name="PMCategoryLocalizedName" representedClassName="PMCategoryLocalizedName" syncable="YES">
+    <entity name="PMExercise" representedClassName="PMExercise" syncable="YES">
+        <attribute name="calories" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="exerciseID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="isAddedByUser" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isCustom" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isDownloaded" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isHidden" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isRemoved" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastUpdatedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoVersion" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="localizedNames" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PMLocalizedName" inverseName="exercise" inverseEntity="PMLocalizedName" syncable="YES"/>
+    </entity>
+    <entity name="PMLocalizedName" representedClassName="PMLocalizedName" syncable="YES">
         <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PMCategory" inverseName="localizedNames" inverseEntity="PMCategory" syncable="YES"/>
+        <relationship name="exercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PMExercise" inverseName="localizedNames" inverseEntity="PMExercise" syncable="YES"/>
     </entity>
     <elements>
         <element name="PMCategory" positionX="-63" positionY="-18" width="128" height="148"/>
-        <element name="PMCategoryLocalizedName" positionX="-45" positionY="54" width="128" height="90"/>
+        <element name="PMLocalizedName" positionX="-45" positionY="54" width="128" height="103"/>
+        <element name="PMExercise" positionX="-27" positionY="72" width="128" height="208"/>
     </elements>
 </model>

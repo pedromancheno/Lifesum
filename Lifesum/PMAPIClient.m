@@ -11,6 +11,7 @@
 #import "AFNetworking.h"
 #import "PMCoreDataHelper.h"
 #import "PMCategory+CoreData.h"
+#import "PMExercise+CoreData.h"
 
 #import <objc/runtime.h>
 
@@ -39,12 +40,35 @@ typedef void(^PMParseCompletion)(NSArray *parsedObjects);
 
 - (void)categoriesWithCompletion:(PMAPIClientCompletion)clientCompletion
 {
-    [self sendRequestWithPath:kCategoriesPath
+    [self requestAndParseObjectWithPath:kCategoriesPath
+                            objectClass:[PMCategory class]
+                             completion:clientCompletion];
+}
+
+- (void)exercisesWithCompletion:(PMAPIClientCompletion)clientCompletion
+{
+    [self requestAndParseObjectWithPath:kExercisesPath
+                            objectClass:[PMExercise class]
+                             completion:clientCompletion];
+}
+
+- (void)foodWithCompletion:(PMAPIClientCompletion)clientCompletion
+{
+ /*   [self requestAndParseObjectWithPath:kCategoriesPath
+                            objectClass:[PMCategory class]
+                             completion:clientCompletion];*/
+}
+
+- (void)requestAndParseObjectWithPath:(NSString *)path
+                          objectClass:(Class)class
+                           completion:(PMAPIClientCompletion)clientCompletion
+{
+    [self requestObjectsWithPath:path
                    completion:^(BOOL success, NSArray *responseObjects, NSError *error) {
                        
                        if (success) {
                            [self parseObjects:responseObjects
-                                      ofClass:[PMCategory class]
+                                      ofClass:class
                                    completion:^(NSArray *parsedObjects) {
                                        
                                        if (clientCompletion)
@@ -58,19 +82,9 @@ typedef void(^PMParseCompletion)(NSArray *parsedObjects);
                    }];
 }
 
-- (void)exercisesWithCompletion:(PMAPIClientCompletion)completion
-{
-    [self sendRequestWithPath:kExercisesPath completion:completion];
-}
-
-- (void)foodWithCompletion:(PMAPIClientCompletion)completion
-{
-    [self sendRequestWithPath:kFoodPath completion:completion];
-}
-
 #pragma mark - Request
 
-- (void)sendRequestWithPath:(NSString *)path completion:(PMAPIClientCompletion)completion
+- (void)requestObjectsWithPath:(NSString *)path completion:(PMAPIClientCompletion)completion
 {
     NSString *baseURLString = [NSString stringWithFormat:@"%@%@", kBaseURL, path];
     NSURL *url = [NSURL URLWithString:baseURLString];

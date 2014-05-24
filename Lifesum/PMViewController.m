@@ -19,6 +19,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[PMAPIClient sharedClient] exercisesWithCompletion:^(BOOL success, NSArray *objects, NSError *error) {
+        
+    }];
 }
 
 @end

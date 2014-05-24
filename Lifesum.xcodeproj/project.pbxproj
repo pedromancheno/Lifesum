@@ -14,9 +14,11 @@
 		0F8F5AAE1931131800E3E720 /* Lifesum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5AAC1931131800E3E720 /* Lifesum.xcdatamodeld */; };
 		0F8F5AB5193118DA00E3E720 /* PMCategory+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5AB4193118DA00E3E720 /* PMCategory+CoreData.m */; };
 		0F8F5AB919311A9400E3E720 /* NSArray+PM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5AB819311A9400E3E720 /* NSArray+PM.m */; };
-		0F8F5AC6193129C100E3E720 /* PMCategoryLocalizedName.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5AC5193129C100E3E720 /* PMCategoryLocalizedName.m */; };
 		0F8F5AC9193129F000E3E720 /* PMCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5AC8193129F000E3E720 /* PMCategory.m */; };
-		0F8F5ACC19312A0B00E3E720 /* PMCategoryLocalizedName+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5ACB19312A0B00E3E720 /* PMCategoryLocalizedName+CoreData.m */; };
+		0F8F5ACC19312A0B00E3E720 /* PMLocalizedName+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5ACB19312A0B00E3E720 /* PMLocalizedName+CoreData.m */; };
+		0F8F5AD819314E4200E3E720 /* PMExercise+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5AD719314E4200E3E720 /* PMExercise+CoreData.m */; };
+		0F8F5ADB19314E5200E3E720 /* PMExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5ADA19314E5200E3E720 /* PMExercise.m */; };
+		0F8F5AF31931501A00E3E720 /* PMLocalizedName.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5AF21931501A00E3E720 /* PMLocalizedName.m */; };
 		0FF24D39193106D400F44222 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF24D38193106D400F44222 /* Foundation.framework */; };
 		0FF24D3B193106D400F44222 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF24D3A193106D400F44222 /* CoreGraphics.framework */; };
 		0FF24D3D193106D400F44222 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF24D3C193106D400F44222 /* UIKit.framework */; };
@@ -59,12 +61,16 @@
 		0F8F5AB4193118DA00E3E720 /* PMCategory+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PMCategory+CoreData.m"; sourceTree = "<group>"; };
 		0F8F5AB719311A9400E3E720 /* NSArray+PM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+PM.h"; path = "PMExtensions/NSArray+PM.h"; sourceTree = SOURCE_ROOT; };
 		0F8F5AB819311A9400E3E720 /* NSArray+PM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PM.m"; path = "PMExtensions/NSArray+PM.m"; sourceTree = SOURCE_ROOT; };
-		0F8F5AC4193129C100E3E720 /* PMCategoryLocalizedName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMCategoryLocalizedName.h; sourceTree = "<group>"; };
-		0F8F5AC5193129C100E3E720 /* PMCategoryLocalizedName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMCategoryLocalizedName.m; sourceTree = "<group>"; };
 		0F8F5AC7193129F000E3E720 /* PMCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMCategory.h; sourceTree = "<group>"; };
 		0F8F5AC8193129F000E3E720 /* PMCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMCategory.m; sourceTree = "<group>"; };
-		0F8F5ACA19312A0B00E3E720 /* PMCategoryLocalizedName+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PMCategoryLocalizedName+CoreData.h"; sourceTree = "<group>"; };
-		0F8F5ACB19312A0B00E3E720 /* PMCategoryLocalizedName+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PMCategoryLocalizedName+CoreData.m"; sourceTree = "<group>"; };
+		0F8F5ACA19312A0B00E3E720 /* PMLocalizedName+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PMLocalizedName+CoreData.h"; sourceTree = "<group>"; };
+		0F8F5ACB19312A0B00E3E720 /* PMLocalizedName+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PMLocalizedName+CoreData.m"; sourceTree = "<group>"; };
+		0F8F5AD619314E4200E3E720 /* PMExercise+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PMExercise+CoreData.h"; sourceTree = "<group>"; };
+		0F8F5AD719314E4200E3E720 /* PMExercise+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PMExercise+CoreData.m"; sourceTree = "<group>"; };
+		0F8F5AD919314E5200E3E720 /* PMExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMExercise.h; sourceTree = "<group>"; };
+		0F8F5ADA19314E5200E3E720 /* PMExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMExercise.m; sourceTree = "<group>"; };
+		0F8F5AF11931501A00E3E720 /* PMLocalizedName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMLocalizedName.h; sourceTree = "<group>"; };
+		0F8F5AF21931501A00E3E720 /* PMLocalizedName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLocalizedName.m; sourceTree = "<group>"; };
 		0FF24D35193106D400F44222 /* Lifesum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lifesum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF24D38193106D400F44222 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0FF24D3A193106D400F44222 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -140,14 +146,18 @@
 		0F8F5AAF193118A000E3E720 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0F8F5AF11931501A00E3E720 /* PMLocalizedName.h */,
+				0F8F5AF21931501A00E3E720 /* PMLocalizedName.m */,
+				0F8F5AD919314E5200E3E720 /* PMExercise.h */,
+				0F8F5ADA19314E5200E3E720 /* PMExercise.m */,
 				0F8F5AC7193129F000E3E720 /* PMCategory.h */,
 				0F8F5AC8193129F000E3E720 /* PMCategory.m */,
 				0F8F5AB3193118DA00E3E720 /* PMCategory+CoreData.h */,
 				0F8F5AB4193118DA00E3E720 /* PMCategory+CoreData.m */,
-				0F8F5AC4193129C100E3E720 /* PMCategoryLocalizedName.h */,
-				0F8F5AC5193129C100E3E720 /* PMCategoryLocalizedName.m */,
-				0F8F5ACA19312A0B00E3E720 /* PMCategoryLocalizedName+CoreData.h */,
-				0F8F5ACB19312A0B00E3E720 /* PMCategoryLocalizedName+CoreData.m */,
+				0F8F5ACA19312A0B00E3E720 /* PMLocalizedName+CoreData.h */,
+				0F8F5ACB19312A0B00E3E720 /* PMLocalizedName+CoreData.m */,
+				0F8F5AD619314E4200E3E720 /* PMExercise+CoreData.h */,
+				0F8F5AD719314E4200E3E720 /* PMExercise+CoreData.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -376,18 +386,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F8F5AB919311A9400E3E720 /* NSArray+PM.m in Sources */,
+				0F8F5AF31931501A00E3E720 /* PMLocalizedName.m in Sources */,
 				0FF24D45193106D400F44222 /* main.m in Sources */,
 				0F8F5AAE1931131800E3E720 /* Lifesum.xcdatamodeld in Sources */,
 				0F8F5AAA1931116F00E3E720 /* PMCoreDataHelper.m in Sources */,
 				0FF24D52193106D400F44222 /* PMViewController.m in Sources */,
 				0F8F5AA91931116F00E3E720 /* NSManagedObject+PM.m in Sources */,
 				0F8F5AC9193129F000E3E720 /* PMCategory.m in Sources */,
+				0F8F5AD819314E4200E3E720 /* PMExercise+CoreData.m in Sources */,
 				0F8F5AA019310A4300E3E720 /* PMAPIClient.m in Sources */,
 				0FF24D49193106D400F44222 /* PMAppDelegate.m in Sources */,
+				0F8F5ADB19314E5200E3E720 /* PMExercise.m in Sources */,
 				0F8F5AB5193118DA00E3E720 /* PMCategory+CoreData.m in Sources */,
-				0F8F5ACC19312A0B00E3E720 /* PMCategoryLocalizedName+CoreData.m in Sources */,
+				0F8F5ACC19312A0B00E3E720 /* PMLocalizedName+CoreData.m in Sources */,
 				0F8F5AAB1931116F00E3E720 /* PMFileSystemHelper.m in Sources */,
-				0F8F5AC6193129C100E3E720 /* PMCategoryLocalizedName.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
