@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Pedro Mancheno. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @interface PMViewController : UIViewController
 
 @end
