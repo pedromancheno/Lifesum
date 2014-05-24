@@ -108,3 +108,9 @@
                                    inContext:(NSManagedObjectContext *)context;
 
 @end
+
+@interface NSManagedObject (Parsing)
+
++ (void)mapDictionary:(NSDictionary *)dictionary toObject:(id)object;
+
+@end

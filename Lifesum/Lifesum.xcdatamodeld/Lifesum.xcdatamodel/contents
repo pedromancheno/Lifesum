@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+    <entity name="PMCategory" representedClassName="PMCategory" syncable="YES">
+        <attribute name="categoryID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="headCategoryID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="lastUpdatedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoVersion" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="servingsCategory" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="localizedNames" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PMCategoryLocalizedName" inverseName="category" inverseEntity="PMCategoryLocalizedName" syncable="YES"/>
+    </entity>
+    <entity name="PMCategoryLocalizedName" representedClassName="PMCategoryLocalizedName" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PMCategory" inverseName="localizedNames" inverseEntity="PMCategory" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="PMCategory" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="PMCategoryLocalizedName" positionX="-45" positionY="54" width="128" height="90"/>
+    </elements>
 </model>

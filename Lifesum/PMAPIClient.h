@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Pedro Mancheno. All rights reserved.
 //
 
-typedef void(^PMAPIClientCompletion)(BOOL success, NSArray *responseObjects, NSError *error);
+typedef void(^PMAPIClientCompletion)(BOOL success, NSArray *objects, NSError *error);
 
 @interface PMAPIClient : NSObject
 

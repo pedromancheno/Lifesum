@@ -9,11 +9,17 @@
 #import "PMAPIClient.h"
 
 #import "AFNetworking.h"
+#import "PMCoreDataHelper.h"
+#import "PMCategory+CoreData.h"
+
+#import <objc/runtime.h>
 
 static NSString *const kBaseURL = @"https://dl.dropbox.com/s/";
 static NSString *const kCategoriesPath = @"hiammhfnfbwxfo9/categoriesStatic.json";
 static NSString *const kExercisesPath = @"b8jd0ome7svh6vl/exercisesStatic.json";
 static NSString *const kFoodPath = @"tl6f4n3dw5v93p2/foodStatic.json";
+
+typedef void(^PMParseCompletion)(NSArray *parsedObjects);
 
 @implementation PMAPIClient
 
@@ -31,9 +37,25 @@ static NSString *const kFoodPath = @"tl6f4n3dw5v93p2/foodStatic.json";
 
 #pragma mark - API methods
 
-- (void)categoriesWithCompletion:(PMAPIClientCompletion)completion
+- (void)categoriesWithCompletion:(PMAPIClientCompletion)clientCompletion
 {
-    [self sendRequestWithPath:kCategoriesPath completion:completion];
+    [self sendRequestWithPath:kCategoriesPath
+                   completion:^(BOOL success, NSArray *responseObjects, NSError *error) {
+                       
+                       if (success) {
+                           [self parseObjects:responseObjects
+                                      ofClass:[PMCategory class]
+                                   completion:^(NSArray *parsedObjects) {
+                                       
+                                       if (clientCompletion)
+                                           clientCompletion(success, parsedObjects, error);
+                                   }];
+                       } else {
+                           
+                           if (clientCompletion)
+                               clientCompletion(success, nil, error);
+                       }
+                   }];
 }
 
 - (void)exercisesWithCompletion:(PMAPIClientCompletion)completion
@@ -68,6 +90,35 @@ static NSString *const kFoodPath = @"tl6f4n3dw5v93p2/foodStatic.json";
     }];
     
     [operation start];
+}
+
+#pragma mark - Parsing
+
+- (void)parseObjects:(NSArray *)objects
+                  ofClass:(Class)class
+               completion:(PMParseCompletion)parseCompletion
+{
+     if (![class isSubclassOfClass:[NSManagedObject class]])
+         return;
+    
+    __block NSArray *parsedObjects = nil;
+    
+    [[PMCoreDataHelper sharedInstance]
+     performAndSaveInBackground:^(NSManagedObjectContext *context, NSError *__autoreleasing *pError) {
+         
+         parsedObjects = [objects map:^id(NSDictionary *dictionary) {
+             id object = [class objectWithDictionary:dictionary inContext:context];
+             [class mapDictionary:dictionary toObject:object];
+             return object;
+         }];
+         
+     } completion:^(BOOL success, NSError *error) {
+         [parsedObjects each:^(NSManagedObject *object, NSUInteger index) {
+             [object inMainContext];
+         }];
+         
+         if (parseCompletion) parseCompletion(parsedObjects);
+     }];
 }
 
 @end

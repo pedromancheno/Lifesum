@@ -250,3 +250,12 @@
 }
 
 @end
+
+@implementation NSManagedObject (Parsing)
+
++ (void)mapDictionary:(NSDictionary *)dictionary toObject:(id)object
+{
+    // abstract
+}
+
+@end
