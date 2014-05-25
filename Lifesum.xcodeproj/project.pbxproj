@@ -19,6 +19,8 @@
 		0F8F5AD819314E4200E3E720 /* PMExercise+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5AD719314E4200E3E720 /* PMExercise+CoreData.m */; };
 		0F8F5ADB19314E5200E3E720 /* PMExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5ADA19314E5200E3E720 /* PMExercise.m */; };
 		0F8F5AF31931501A00E3E720 /* PMLocalizedName.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5AF21931501A00E3E720 /* PMLocalizedName.m */; };
+		0F8F5B021931938F00E3E720 /* PMFood+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5B011931938F00E3E720 /* PMFood+CoreData.m */; };
+		0F8F5B051931939A00E3E720 /* PMFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5B041931939A00E3E720 /* PMFood.m */; };
 		0FF24D39193106D400F44222 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF24D38193106D400F44222 /* Foundation.framework */; };
 		0FF24D3B193106D400F44222 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF24D3A193106D400F44222 /* CoreGraphics.framework */; };
 		0FF24D3D193106D400F44222 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF24D3C193106D400F44222 /* UIKit.framework */; };
@@ -71,6 +73,10 @@
 		0F8F5ADA19314E5200E3E720 /* PMExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMExercise.m; sourceTree = "<group>"; };
 		0F8F5AF11931501A00E3E720 /* PMLocalizedName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMLocalizedName.h; sourceTree = "<group>"; };
 		0F8F5AF21931501A00E3E720 /* PMLocalizedName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLocalizedName.m; sourceTree = "<group>"; };
+		0F8F5B001931938F00E3E720 /* PMFood+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PMFood+CoreData.h"; sourceTree = "<group>"; };
+		0F8F5B011931938F00E3E720 /* PMFood+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PMFood+CoreData.m"; sourceTree = "<group>"; };
+		0F8F5B031931939A00E3E720 /* PMFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMFood.h; sourceTree = "<group>"; };
+		0F8F5B041931939A00E3E720 /* PMFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMFood.m; sourceTree = "<group>"; };
 		0FF24D35193106D400F44222 /* Lifesum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lifesum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF24D38193106D400F44222 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0FF24D3A193106D400F44222 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -146,18 +152,10 @@
 		0F8F5AAF193118A000E3E720 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0F8F5AF11931501A00E3E720 /* PMLocalizedName.h */,
-				0F8F5AF21931501A00E3E720 /* PMLocalizedName.m */,
-				0F8F5AD919314E5200E3E720 /* PMExercise.h */,
-				0F8F5ADA19314E5200E3E720 /* PMExercise.m */,
-				0F8F5AC7193129F000E3E720 /* PMCategory.h */,
-				0F8F5AC8193129F000E3E720 /* PMCategory.m */,
-				0F8F5AB3193118DA00E3E720 /* PMCategory+CoreData.h */,
-				0F8F5AB4193118DA00E3E720 /* PMCategory+CoreData.m */,
-				0F8F5ACA19312A0B00E3E720 /* PMLocalizedName+CoreData.h */,
-				0F8F5ACB19312A0B00E3E720 /* PMLocalizedName+CoreData.m */,
-				0F8F5AD619314E4200E3E720 /* PMExercise+CoreData.h */,
-				0F8F5AD719314E4200E3E720 /* PMExercise+CoreData.m */,
+				0F8F5B09193193C300E3E720 /* Food */,
+				0F8F5B08193193BD00E3E720 /* Exercise */,
+				0F8F5B07193193B400E3E720 /* LocalizedName */,
+				0F8F5B061931939F00E3E720 /* Category */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -169,6 +167,50 @@
 				0F8F5AB819311A9400E3E720 /* NSArray+PM.m */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		0F8F5B061931939F00E3E720 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				0F8F5AC7193129F000E3E720 /* PMCategory.h */,
+				0F8F5AC8193129F000E3E720 /* PMCategory.m */,
+				0F8F5AB3193118DA00E3E720 /* PMCategory+CoreData.h */,
+				0F8F5AB4193118DA00E3E720 /* PMCategory+CoreData.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		0F8F5B07193193B400E3E720 /* LocalizedName */ = {
+			isa = PBXGroup;
+			children = (
+				0F8F5AF11931501A00E3E720 /* PMLocalizedName.h */,
+				0F8F5AF21931501A00E3E720 /* PMLocalizedName.m */,
+				0F8F5ACA19312A0B00E3E720 /* PMLocalizedName+CoreData.h */,
+				0F8F5ACB19312A0B00E3E720 /* PMLocalizedName+CoreData.m */,
+			);
+			name = LocalizedName;
+			sourceTree = "<group>";
+		};
+		0F8F5B08193193BD00E3E720 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				0F8F5AD919314E5200E3E720 /* PMExercise.h */,
+				0F8F5ADA19314E5200E3E720 /* PMExercise.m */,
+				0F8F5AD619314E4200E3E720 /* PMExercise+CoreData.h */,
+				0F8F5AD719314E4200E3E720 /* PMExercise+CoreData.m */,
+			);
+			name = Exercise;
+			sourceTree = "<group>";
+		};
+		0F8F5B09193193C300E3E720 /* Food */ = {
+			isa = PBXGroup;
+			children = (
+				0F8F5B031931939A00E3E720 /* PMFood.h */,
+				0F8F5B041931939A00E3E720 /* PMFood.m */,
+				0F8F5B001931938F00E3E720 /* PMFood+CoreData.h */,
+				0F8F5B011931938F00E3E720 /* PMFood+CoreData.m */,
+			);
+			name = Food;
 			sourceTree = "<group>";
 		};
 		0FF24D2C193106D400F44222 = {
@@ -398,8 +440,10 @@
 				0FF24D49193106D400F44222 /* PMAppDelegate.m in Sources */,
 				0F8F5ADB19314E5200E3E720 /* PMExercise.m in Sources */,
 				0F8F5AB5193118DA00E3E720 /* PMCategory+CoreData.m in Sources */,
+				0F8F5B051931939A00E3E720 /* PMFood.m in Sources */,
 				0F8F5ACC19312A0B00E3E720 /* PMLocalizedName+CoreData.m in Sources */,
 				0F8F5AAB1931116F00E3E720 /* PMFileSystemHelper.m in Sources */,
+				0F8F5B021931938F00E3E720 /* PMFood+CoreData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

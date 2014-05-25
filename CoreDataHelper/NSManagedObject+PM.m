@@ -64,9 +64,6 @@
                                    inContext:(NSManagedObjectContext *)context
 {
     id lookupObject = dictionary[[self dictionaryKey]];
-    if ([lookupObject isKindOfClass:[NSString class]]) {
-        lookupObject = @([lookupObject integerValue]);
-    }
     
     NSArray* objects = [self findAllWhereField:[self primaryKey]
                                         equals:lookupObject

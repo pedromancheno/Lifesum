@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="PMCategory" representedClassName="PMCategory" syncable="YES">
-        <attribute name="categoryID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="categoryID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="headCategoryID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="lastUpdatedDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -11,7 +11,7 @@
     </entity>
     <entity name="PMExercise" representedClassName="PMExercise" syncable="YES">
         <attribute name="calories" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="exerciseID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="exerciseID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="isAddedByUser" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isCustom" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isDownloaded" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -21,6 +21,40 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photoVersion" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="localizedNames" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PMLocalizedName" inverseName="exercise" inverseEntity="PMLocalizedName" syncable="YES"/>
+    </entity>
+    <entity name="PMFood" representedClassName="PMFood" syncable="YES">
+        <attribute name="brand" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="calories" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="carbohydrates" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="categoryID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="cholesterol" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="defaultSize" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="fat" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="fiber" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="foodID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="gramsPerServing" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="isAddedByUser" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isCustom" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isDownloaded" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isHidden" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isRemoved" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastUpdatedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="mlInGram" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pcsInGram" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="pcsText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="potassium" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="protein" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="saturatedFat" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="servingCategory" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="shouldShowSameTypeOnly" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="showMeasurement" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sodium" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="sourceID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sugar" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="typeOfMeasurement" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="unsaturatedFat" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <entity name="PMLocalizedName" representedClassName="PMLocalizedName" syncable="YES">
         <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
@@ -32,5 +66,6 @@
         <element name="PMCategory" positionX="-63" positionY="-18" width="128" height="148"/>
         <element name="PMLocalizedName" positionX="-45" positionY="54" width="128" height="103"/>
         <element name="PMExercise" positionX="-27" positionY="72" width="128" height="208"/>
+        <element name="PMFood" positionX="-9" positionY="153" width="128" height="523"/>
     </elements>
 </model>

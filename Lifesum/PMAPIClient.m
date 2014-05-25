@@ -12,6 +12,7 @@
 #import "PMCoreDataHelper.h"
 #import "PMCategory+CoreData.h"
 #import "PMExercise+CoreData.h"
+#import "PMFood+CoreData.h"
 
 #import <objc/runtime.h>
 
@@ -54,9 +55,9 @@ typedef void(^PMParseCompletion)(NSArray *parsedObjects);
 
 - (void)foodWithCompletion:(PMAPIClientCompletion)clientCompletion
 {
- /*   [self requestAndParseObjectWithPath:kCategoriesPath
-                            objectClass:[PMCategory class]
-                             completion:clientCompletion];*/
+    [self requestAndParseObjectWithPath:kFoodPath
+                            objectClass:[PMFood class]
+                             completion:clientCompletion];
 }
 
 - (void)requestAndParseObjectWithPath:(NSString *)path
@@ -121,8 +122,20 @@ typedef void(^PMParseCompletion)(NSArray *parsedObjects);
      performAndSaveInBackground:^(NSManagedObjectContext *context, NSError *__autoreleasing *pError) {
          
          parsedObjects = [objects map:^id(NSDictionary *dictionary) {
+             
+             // fetch object locally or create it if it does not exists
              id object = [class objectWithDictionary:dictionary inContext:context];
-             [class mapDictionary:dictionary toObject:object];
+             
+             // check to see if mapping is actually needed
+             
+             if ([object respondsToSelector:@selector(shouldMapDictionary:)]) {
+                 if (![object shouldMapDictionary:dictionary]) {
+                     return object;
+                 }
+             }
+             
+              [class mapDictionary:dictionary toObject:object];
+             
              return object;
          }];
          
