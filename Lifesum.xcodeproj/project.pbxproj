@@ -8,6 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		0F8F5AA019310A4300E3E720 /* PMAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5A9F19310A4300E3E720 /* PMAPIClient.m */; };
+		0F8F5AA91931116F00E3E720 /* NSManagedObject+PM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5AA41931116F00E3E720 /* NSManagedObject+PM.m */; };
+		0F8F5AAA1931116F00E3E720 /* PMCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5AA61931116F00E3E720 /* PMCoreDataHelper.m */; };
+		0F8F5AAB1931116F00E3E720 /* PMFileSystemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5AA81931116F00E3E720 /* PMFileSystemHelper.m */; };
+		0F8F5AAE1931131800E3E720 /* Lifesum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5AAC1931131800E3E720 /* Lifesum.xcdatamodeld */; };
+		0F8F5AB5193118DA00E3E720 /* PMCategory+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5AB4193118DA00E3E720 /* PMCategory+CoreData.m */; };
+		0F8F5AB919311A9400E3E720 /* NSArray+PM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5AB819311A9400E3E720 /* NSArray+PM.m */; };
+		0F8F5AC9193129F000E3E720 /* PMCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5AC8193129F000E3E720 /* PMCategory.m */; };
+		0F8F5ACC19312A0B00E3E720 /* PMLocalizedName+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5ACB19312A0B00E3E720 /* PMLocalizedName+CoreData.m */; };
+		0F8F5AD819314E4200E3E720 /* PMExercise+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5AD719314E4200E3E720 /* PMExercise+CoreData.m */; };
+		0F8F5ADB19314E5200E3E720 /* PMExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5ADA19314E5200E3E720 /* PMExercise.m */; };
+		0F8F5AF31931501A00E3E720 /* PMLocalizedName.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5AF21931501A00E3E720 /* PMLocalizedName.m */; };
+		0F8F5B021931938F00E3E720 /* PMFood+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5B011931938F00E3E720 /* PMFood+CoreData.m */; };
+		0F8F5B051931939A00E3E720 /* PMFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5B041931939A00E3E720 /* PMFood.m */; };
 		0FF24D39193106D400F44222 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF24D38193106D400F44222 /* Foundation.framework */; };
 		0FF24D3B193106D400F44222 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF24D3A193106D400F44222 /* CoreGraphics.framework */; };
 		0FF24D3D193106D400F44222 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF24D3C193106D400F44222 /* UIKit.framework */; };
@@ -39,6 +52,31 @@
 /* Begin PBXFileReference section */
 		0F8F5A9E19310A4300E3E720 /* PMAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMAPIClient.h; sourceTree = "<group>"; };
 		0F8F5A9F19310A4300E3E720 /* PMAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMAPIClient.m; sourceTree = "<group>"; };
+		0F8F5AA31931116F00E3E720 /* NSManagedObject+PM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+PM.h"; path = "CoreDataHelper/NSManagedObject+PM.h"; sourceTree = SOURCE_ROOT; };
+		0F8F5AA41931116F00E3E720 /* NSManagedObject+PM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+PM.m"; path = "CoreDataHelper/NSManagedObject+PM.m"; sourceTree = SOURCE_ROOT; };
+		0F8F5AA51931116F00E3E720 /* PMCoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMCoreDataHelper.h; path = CoreDataHelper/PMCoreDataHelper.h; sourceTree = SOURCE_ROOT; };
+		0F8F5AA61931116F00E3E720 /* PMCoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMCoreDataHelper.m; path = CoreDataHelper/PMCoreDataHelper.m; sourceTree = SOURCE_ROOT; };
+		0F8F5AA71931116F00E3E720 /* PMFileSystemHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMFileSystemHelper.h; path = CoreDataHelper/PMFileSystemHelper.h; sourceTree = SOURCE_ROOT; };
+		0F8F5AA81931116F00E3E720 /* PMFileSystemHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMFileSystemHelper.m; path = CoreDataHelper/PMFileSystemHelper.m; sourceTree = SOURCE_ROOT; };
+		0F8F5AAD1931131800E3E720 /* Lifesum.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lifesum.xcdatamodel; sourceTree = "<group>"; };
+		0F8F5AB3193118DA00E3E720 /* PMCategory+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PMCategory+CoreData.h"; sourceTree = "<group>"; };
+		0F8F5AB4193118DA00E3E720 /* PMCategory+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PMCategory+CoreData.m"; sourceTree = "<group>"; };
+		0F8F5AB719311A9400E3E720 /* NSArray+PM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+PM.h"; path = "PMExtensions/NSArray+PM.h"; sourceTree = SOURCE_ROOT; };
+		0F8F5AB819311A9400E3E720 /* NSArray+PM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PM.m"; path = "PMExtensions/NSArray+PM.m"; sourceTree = SOURCE_ROOT; };
+		0F8F5AC7193129F000E3E720 /* PMCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMCategory.h; sourceTree = "<group>"; };
+		0F8F5AC8193129F000E3E720 /* PMCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMCategory.m; sourceTree = "<group>"; };
+		0F8F5ACA19312A0B00E3E720 /* PMLocalizedName+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PMLocalizedName+CoreData.h"; sourceTree = "<group>"; };
+		0F8F5ACB19312A0B00E3E720 /* PMLocalizedName+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PMLocalizedName+CoreData.m"; sourceTree = "<group>"; };
+		0F8F5AD619314E4200E3E720 /* PMExercise+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PMExercise+CoreData.h"; sourceTree = "<group>"; };
+		0F8F5AD719314E4200E3E720 /* PMExercise+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PMExercise+CoreData.m"; sourceTree = "<group>"; };
+		0F8F5AD919314E5200E3E720 /* PMExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMExercise.h; sourceTree = "<group>"; };
+		0F8F5ADA19314E5200E3E720 /* PMExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMExercise.m; sourceTree = "<group>"; };
+		0F8F5AF11931501A00E3E720 /* PMLocalizedName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMLocalizedName.h; sourceTree = "<group>"; };
+		0F8F5AF21931501A00E3E720 /* PMLocalizedName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLocalizedName.m; sourceTree = "<group>"; };
+		0F8F5B001931938F00E3E720 /* PMFood+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PMFood+CoreData.h"; sourceTree = "<group>"; };
+		0F8F5B011931938F00E3E720 /* PMFood+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PMFood+CoreData.m"; sourceTree = "<group>"; };
+		0F8F5B031931939A00E3E720 /* PMFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMFood.h; sourceTree = "<group>"; };
+		0F8F5B041931939A00E3E720 /* PMFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMFood.m; sourceTree = "<group>"; };
 		0FF24D35193106D400F44222 /* Lifesum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lifesum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF24D38193106D400F44222 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0FF24D3A193106D400F44222 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -88,6 +126,93 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F8F5AA11931115800E3E720 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				0F8F5A9E19310A4300E3E720 /* PMAPIClient.h */,
+				0F8F5A9F19310A4300E3E720 /* PMAPIClient.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		0F8F5AA21931116000E3E720 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0F8F5AA31931116F00E3E720 /* NSManagedObject+PM.h */,
+				0F8F5AA41931116F00E3E720 /* NSManagedObject+PM.m */,
+				0F8F5AA51931116F00E3E720 /* PMCoreDataHelper.h */,
+				0F8F5AA61931116F00E3E720 /* PMCoreDataHelper.m */,
+				0F8F5AA71931116F00E3E720 /* PMFileSystemHelper.h */,
+				0F8F5AA81931116F00E3E720 /* PMFileSystemHelper.m */,
+				0F8F5AAC1931131800E3E720 /* Lifesum.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		0F8F5AAF193118A000E3E720 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0F8F5B09193193C300E3E720 /* Food */,
+				0F8F5B08193193BD00E3E720 /* Exercise */,
+				0F8F5B07193193B400E3E720 /* LocalizedName */,
+				0F8F5B061931939F00E3E720 /* Category */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0F8F5AB619311A8400E3E720 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0F8F5AB719311A9400E3E720 /* NSArray+PM.h */,
+				0F8F5AB819311A9400E3E720 /* NSArray+PM.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		0F8F5B061931939F00E3E720 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				0F8F5AC7193129F000E3E720 /* PMCategory.h */,
+				0F8F5AC8193129F000E3E720 /* PMCategory.m */,
+				0F8F5AB3193118DA00E3E720 /* PMCategory+CoreData.h */,
+				0F8F5AB4193118DA00E3E720 /* PMCategory+CoreData.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		0F8F5B07193193B400E3E720 /* LocalizedName */ = {
+			isa = PBXGroup;
+			children = (
+				0F8F5AF11931501A00E3E720 /* PMLocalizedName.h */,
+				0F8F5AF21931501A00E3E720 /* PMLocalizedName.m */,
+				0F8F5ACA19312A0B00E3E720 /* PMLocalizedName+CoreData.h */,
+				0F8F5ACB19312A0B00E3E720 /* PMLocalizedName+CoreData.m */,
+			);
+			name = LocalizedName;
+			sourceTree = "<group>";
+		};
+		0F8F5B08193193BD00E3E720 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				0F8F5AD919314E5200E3E720 /* PMExercise.h */,
+				0F8F5ADA19314E5200E3E720 /* PMExercise.m */,
+				0F8F5AD619314E4200E3E720 /* PMExercise+CoreData.h */,
+				0F8F5AD719314E4200E3E720 /* PMExercise+CoreData.m */,
+			);
+			name = Exercise;
+			sourceTree = "<group>";
+		};
+		0F8F5B09193193C300E3E720 /* Food */ = {
+			isa = PBXGroup;
+			children = (
+				0F8F5B031931939A00E3E720 /* PMFood.h */,
+				0F8F5B041931939A00E3E720 /* PMFood.m */,
+				0F8F5B001931938F00E3E720 /* PMFood+CoreData.h */,
+				0F8F5B011931938F00E3E720 /* PMFood+CoreData.m */,
+			);
+			name = Food;
+			sourceTree = "<group>";
+		};
 		0FF24D2C193106D400F44222 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +248,10 @@
 		0FF24D3E193106D400F44222 /* Lifesum */ = {
 			isa = PBXGroup;
 			children = (
+				0F8F5AB619311A8400E3E720 /* Extensions */,
+				0F8F5AAF193118A000E3E720 /* Model */,
+				0F8F5AA21931116000E3E720 /* CoreData */,
+				0F8F5AA11931115800E3E720 /* Networking */,
 				0FF24D47193106D400F44222 /* PMAppDelegate.h */,
 				0FF24D48193106D400F44222 /* PMAppDelegate.m */,
 				0FF24D4A193106D400F44222 /* Main_iPhone.storyboard */,
@@ -131,8 +260,6 @@
 				0FF24D51193106D400F44222 /* PMViewController.m */,
 				0FF24D53193106D400F44222 /* Images.xcassets */,
 				0FF24D3F193106D400F44222 /* Supporting Files */,
-				0F8F5A9E19310A4300E3E720 /* PMAPIClient.h */,
-				0F8F5A9F19310A4300E3E720 /* PMAPIClient.m */,
 			);
 			path = Lifesum;
 			sourceTree = "<group>";
@@ -300,10 +427,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F8F5AB919311A9400E3E720 /* NSArray+PM.m in Sources */,
+				0F8F5AF31931501A00E3E720 /* PMLocalizedName.m in Sources */,
 				0FF24D45193106D400F44222 /* main.m in Sources */,
+				0F8F5AAE1931131800E3E720 /* Lifesum.xcdatamodeld in Sources */,
+				0F8F5AAA1931116F00E3E720 /* PMCoreDataHelper.m in Sources */,
 				0FF24D52193106D400F44222 /* PMViewController.m in Sources */,
+				0F8F5AA91931116F00E3E720 /* NSManagedObject+PM.m in Sources */,
+				0F8F5AC9193129F000E3E720 /* PMCategory.m in Sources */,
+				0F8F5AD819314E4200E3E720 /* PMExercise+CoreData.m in Sources */,
 				0F8F5AA019310A4300E3E720 /* PMAPIClient.m in Sources */,
 				0FF24D49193106D400F44222 /* PMAppDelegate.m in Sources */,
+				0F8F5ADB19314E5200E3E720 /* PMExercise.m in Sources */,
+				0F8F5AB5193118DA00E3E720 /* PMCategory+CoreData.m in Sources */,
+				0F8F5B051931939A00E3E720 /* PMFood.m in Sources */,
+				0F8F5ACC19312A0B00E3E720 /* PMLocalizedName+CoreData.m in Sources */,
+				0F8F5AAB1931116F00E3E720 /* PMFileSystemHelper.m in Sources */,
+				0F8F5B021931938F00E3E720 /* PMFood+CoreData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +672,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0F8F5AAC1931131800E3E720 /* Lifesum.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0F8F5AAD1931131800E3E720 /* Lifesum.xcdatamodel */,
+			);
+			currentVersion = 0F8F5AAD1931131800E3E720 /* Lifesum.xcdatamodel */;
+			path = Lifesum.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0FF24D2D193106D400F44222 /* Project object */;
 }

@@ -9,11 +9,19 @@
 #import "PMAPIClient.h"
 
 #import "AFNetworking.h"
+#import "PMCoreDataHelper.h"
+#import "PMCategory+CoreData.h"
+#import "PMExercise+CoreData.h"
+#import "PMFood+CoreData.h"
+
+#import <objc/runtime.h>
 
 static NSString *const kBaseURL = @"https://dl.dropbox.com/s/";
 static NSString *const kCategoriesPath = @"hiammhfnfbwxfo9/categoriesStatic.json";
 static NSString *const kExercisesPath = @"b8jd0ome7svh6vl/exercisesStatic.json";
 static NSString *const kFoodPath = @"tl6f4n3dw5v93p2/foodStatic.json";
+
+typedef void(^PMParseCompletion)(NSArray *parsedObjects);
 
 @implementation PMAPIClient
 
@@ -31,24 +39,53 @@ static NSString *const kFoodPath = @"tl6f4n3dw5v93p2/foodStatic.json";
 
 #pragma mark - API methods
 
-- (void)categoriesWithCompletion:(PMAPIClientCompletion)completion
+- (void)categoriesWithCompletion:(PMAPIClientCompletion)clientCompletion
 {
-    [self sendRequestWithPath:kCategoriesPath completion:completion];
+    [self requestAndParseObjectWithPath:kCategoriesPath
+                            objectClass:[PMCategory class]
+                             completion:clientCompletion];
 }
 
-- (void)exercisesWithCompletion:(PMAPIClientCompletion)completion
+- (void)exercisesWithCompletion:(PMAPIClientCompletion)clientCompletion
 {
-    [self sendRequestWithPath:kExercisesPath completion:completion];
+    [self requestAndParseObjectWithPath:kExercisesPath
+                            objectClass:[PMExercise class]
+                             completion:clientCompletion];
 }
 
-- (void)foodWithCompletion:(PMAPIClientCompletion)completion
+- (void)foodWithCompletion:(PMAPIClientCompletion)clientCompletion
 {
-    [self sendRequestWithPath:kFoodPath completion:completion];
+    [self requestAndParseObjectWithPath:kFoodPath
+                            objectClass:[PMFood class]
+                             completion:clientCompletion];
+}
+
+- (void)requestAndParseObjectWithPath:(NSString *)path
+                          objectClass:(Class)class
+                           completion:(PMAPIClientCompletion)clientCompletion
+{
+    [self requestObjectsWithPath:path
+                   completion:^(BOOL success, NSArray *responseObjects, NSError *error) {
+                       
+                       if (success) {
+                           [self parseObjects:responseObjects
+                                      ofClass:class
+                                   completion:^(NSArray *parsedObjects) {
+                                       
+                                       if (clientCompletion)
+                                           clientCompletion(success, parsedObjects, error);
+                                   }];
+                       } else {
+                           
+                           if (clientCompletion)
+                               clientCompletion(success, nil, error);
+                       }
+                   }];
 }
 
 #pragma mark - Request
 
-- (void)sendRequestWithPath:(NSString *)path completion:(PMAPIClientCompletion)completion
+- (void)requestObjectsWithPath:(NSString *)path completion:(PMAPIClientCompletion)completion
 {
     NSString *baseURLString = [NSString stringWithFormat:@"%@%@", kBaseURL, path];
     NSURL *url = [NSURL URLWithString:baseURLString];
@@ -68,6 +105,47 @@ static NSString *const kFoodPath = @"tl6f4n3dw5v93p2/foodStatic.json";
     }];
     
     [operation start];
+}
+
+#pragma mark - Parsing
+
+- (void)parseObjects:(NSArray *)objects
+                  ofClass:(Class)class
+               completion:(PMParseCompletion)parseCompletion
+{
+     if (![class isSubclassOfClass:[NSManagedObject class]])
+         return;
+    
+    __block NSArray *parsedObjects = nil;
+    
+    [[PMCoreDataHelper sharedInstance]
+     performAndSaveInBackground:^(NSManagedObjectContext *context, NSError *__autoreleasing *pError) {
+         
+         parsedObjects = [objects map:^id(NSDictionary *dictionary) {
+             
+             // fetch object locally or create it if it does not exists
+             id object = [class objectWithDictionary:dictionary inContext:context];
+             
+             // check to see if mapping is actually needed
+             
+             if ([object respondsToSelector:@selector(shouldMapDictionary:)]) {
+                 if (![object shouldMapDictionary:dictionary]) {
+                     return object;
+                 }
+             }
+             
+              [class mapDictionary:dictionary toObject:object];
+             
+             return object;
+         }];
+         
+     } completion:^(BOOL success, NSError *error) {
+         [parsedObjects each:^(NSManagedObject *object, NSUInteger index) {
+             [object inMainContext];
+         }];
+         
+         if (parseCompletion) parseCompletion(parsedObjects);
+     }];
 }
 
 @end

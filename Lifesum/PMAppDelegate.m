@@ -8,11 +8,14 @@
 
 #import "PMAppDelegate.h"
 
+#import "PMCoreDataHelper.h"
+
 @implementation PMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [[PMCoreDataHelper sharedInstance] setupCoreDataStack];
+    
     return YES;
 }
 							
