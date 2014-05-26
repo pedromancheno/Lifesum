@@ -18,11 +18,30 @@ PODS:
   - AFNetworking/UIKit (2.2.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - FormatterKit (1.4.3):
+    - FormatterKit/AddressFormatter
+    - FormatterKit/ArrayFormatter
+    - FormatterKit/ColorFormatter
+    - FormatterKit/LocationFormatter
+    - FormatterKit/OrdinalNumberFormatter
+    - FormatterKit/TimeIntervalFormatter
+    - FormatterKit/UnitOfInformationFormatter
+    - FormatterKit/URLRequestFormatter
+  - FormatterKit/AddressFormatter (1.4.3)
+  - FormatterKit/ArrayFormatter (1.4.3)
+  - FormatterKit/ColorFormatter (1.4.3)
+  - FormatterKit/LocationFormatter (1.4.3)
+  - FormatterKit/OrdinalNumberFormatter (1.4.3)
+  - FormatterKit/TimeIntervalFormatter (1.4.3)
+  - FormatterKit/UnitOfInformationFormatter (1.4.3)
+  - FormatterKit/URLRequestFormatter (1.4.3)
 
 DEPENDENCIES:
   - AFNetworking (= 2.2.4)
+  - FormatterKit
 
 SPEC CHECKSUMS:
   AFNetworking: ab63e259fe91eef4519b371ef0a4955af0e73e64
+  FormatterKit: f744aa7928003eba8317d6fd6998414fbc78f7a5
 
 COCOAPODS: 0.33.1
