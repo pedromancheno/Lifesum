@@ -58,7 +58,7 @@
     }];
     
     // UIAppearance
-    [[UITabBar appearance] setTintColor:[UIColor greenColor]];
+    [[UITabBar appearance] setTintColor:[UIColor blueColor]];
     
     return YES;
 }
