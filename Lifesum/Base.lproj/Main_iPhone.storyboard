@@ -75,7 +75,7 @@
                             <constraint firstItem="3tj-Fu-LU1" firstAttribute="leading" secondItem="cY6-bG-7oy" secondAttribute="leading" id="Yv8-wu-hp3"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Categories" id="syZ-nm-Eko"/>
+                    <tabBarItem key="tabBarItem" title="Categories" image="category" id="syZ-nm-Eko"/>
                     <connections>
                         <outlet property="tableView" destination="3tj-Fu-LU1" id="kgL-Gp-iD6"/>
                     </connections>
@@ -93,16 +93,18 @@
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.070475222870000007" green="0.91180294750000002" blue="0.19462564439999999" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="KhT-wv-15m" kind="relationship" relationship="viewControllers" id="iGc-sk-Efg"/>
                         <segue destination="gRd-rG-Dfg" kind="relationship" relationship="viewControllers" id="V5U-dj-PVK"/>
                         <segue destination="Pjd-6b-qX6" kind="relationship" relationship="viewControllers" id="v4R-y8-VJJ"/>
+                        <segue destination="QML-sm-zx3" kind="relationship" relationship="viewControllers" id="gZ5-B1-Qod"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LOE-f5-XsR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="234" y="-609"/>
+            <point key="canvasLocation" x="198" y="-309"/>
         </scene>
         <!--Exercise View Controller - Exercises-->
         <scene sceneID="hBB-z4-pKZ">
@@ -173,14 +175,93 @@
                             <constraint firstItem="PJx-j2-ewm" firstAttribute="top" secondItem="gF0-pW-6t6" secondAttribute="bottom" id="vJ6-MN-5xT"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Exercises" id="bxl-lu-HeQ"/>
+                    <tabBarItem key="tabBarItem" title="Exercises" image="exercise" id="bxl-lu-HeQ"/>
                     <connections>
                         <outlet property="tableView" destination="PJx-j2-ewm" id="UxD-9J-Et3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fvt-gZ-gmN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="768" y="-54"/>
+            <point key="canvasLocation" x="1156" y="104"/>
+        </scene>
+        <!--View Controller - About-->
+        <scene sceneID="PqP-JI-cVP">
+            <objects>
+                <viewController id="QML-sm-zx3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3sj-bJ-dzN"/>
+                        <viewControllerLayoutGuide type="bottom" id="a4H-hj-QvM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1w1-w7-VQ0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="built by Pedro Mancheno " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="liv-9z-zvG">
+                                <rect key="frame" x="20" y="98" width="280" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="zeY-wZ-MJr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://github.com/pedromancheno" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6Z-36-TCb">
+                                <rect key="frame" x="20" y="120" width="280" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="4cr-Ok-REP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Italic" family="Trebuchet MS" pointSize="10"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="images by Icon8" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fG4-LS-u6i">
+                                <rect key="frame" x="20" y="172" width="280" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="FQ9-I6-ONX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://icons8.com/license" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gyk-Ms-o9I">
+                                <rect key="frame" x="20" y="194" width="280" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="LfA-JT-ILl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Italic" family="Trebuchet MS" pointSize="10"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lifesum Challenge" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGq-EH-aYY">
+                                <rect key="frame" x="99" y="40" width="123" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
+                                <color key="textColor" red="0.070475222871378362" green="0.91180294752120972" blue="0.1946256443566918" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="liv-9z-zvG" firstAttribute="leading" secondItem="1w1-w7-VQ0" secondAttribute="leading" constant="20" id="PN1-Hx-nE4"/>
+                            <constraint firstItem="fG4-LS-u6i" firstAttribute="leading" secondItem="1w1-w7-VQ0" secondAttribute="leading" constant="20" id="RpT-aF-Rdg"/>
+                            <constraint firstItem="fG4-LS-u6i" firstAttribute="top" secondItem="t6Z-36-TCb" secondAttribute="bottom" constant="40" id="W21-Rg-zeA"/>
+                            <constraint firstAttribute="centerX" secondItem="GGq-EH-aYY" secondAttribute="centerX" id="fKn-X7-XZW"/>
+                            <constraint firstItem="Gyk-Ms-o9I" firstAttribute="top" secondItem="fG4-LS-u6i" secondAttribute="bottom" constant="4" id="gSI-Yp-TOZ"/>
+                            <constraint firstItem="t6Z-36-TCb" firstAttribute="top" secondItem="liv-9z-zvG" secondAttribute="bottom" constant="4" id="kHo-28-Tgy"/>
+                            <constraint firstItem="GGq-EH-aYY" firstAttribute="top" secondItem="3sj-bJ-dzN" secondAttribute="bottom" constant="20" id="toQ-X8-784"/>
+                            <constraint firstItem="Gyk-Ms-o9I" firstAttribute="leading" secondItem="1w1-w7-VQ0" secondAttribute="leading" constant="20" id="wTN-lG-DGj"/>
+                            <constraint firstItem="liv-9z-zvG" firstAttribute="top" secondItem="GGq-EH-aYY" secondAttribute="bottom" constant="40" id="xCE-Lz-Cng"/>
+                            <constraint firstItem="t6Z-36-TCb" firstAttribute="leading" secondItem="1w1-w7-VQ0" secondAttribute="leading" constant="20" id="zbZ-6S-8cl"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="About" image="about" id="onw-kc-6UN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="51i-Zp-9FY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="581" y="284"/>
         </scene>
         <!--Food View Controller - Food-->
         <scene sceneID="Pbl-VA-CjQ">
@@ -272,7 +353,7 @@
                             <constraint firstItem="XZZ-Iq-yLX" firstAttribute="top" secondItem="osy-DZ-SHS" secondAttribute="bottom" id="v8z-0S-agN"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Food" id="01Z-P3-gml"/>
+                    <tabBarItem key="tabBarItem" title="Food" image="food" id="01Z-P3-gml"/>
                     <connections>
                         <outlet property="tableView" destination="XZZ-Iq-yLX" id="SkK-HM-bwc"/>
                     </connections>
@@ -282,6 +363,12 @@
             <point key="canvasLocation" x="1143" y="-609"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="about" width="37" height="37"/>
+        <image name="category" width="32" height="32"/>
+        <image name="exercise" width="37" height="37"/>
+        <image name="food" width="37" height="37"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

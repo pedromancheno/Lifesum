@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F4EB3E01933796600B961E3 /* PMAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4EB3DF1933796600B961E3 /* PMAboutViewController.m */; };
 		0F8F5AA019310A4300E3E720 /* PMAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5A9F19310A4300E3E720 /* PMAPIClient.m */; };
 		0F8F5AA91931116F00E3E720 /* NSManagedObject+PM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5AA41931116F00E3E720 /* NSManagedObject+PM.m */; };
 		0F8F5AAA1931116F00E3E720 /* PMCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F5AA61931116F00E3E720 /* PMCoreDataHelper.m */; };
@@ -56,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F4EB3DE1933796600B961E3 /* PMAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMAboutViewController.h; sourceTree = "<group>"; };
+		0F4EB3DF1933796600B961E3 /* PMAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMAboutViewController.m; sourceTree = "<group>"; };
 		0F8F5A9E19310A4300E3E720 /* PMAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMAPIClient.h; sourceTree = "<group>"; };
 		0F8F5A9F19310A4300E3E720 /* PMAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMAPIClient.m; sourceTree = "<group>"; };
 		0F8F5AA31931116F00E3E720 /* NSManagedObject+PM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+PM.h"; path = "CoreDataHelper/NSManagedObject+PM.h"; sourceTree = SOURCE_ROOT; };
@@ -242,6 +245,8 @@
 				0F8F5B151931A58700E3E720 /* PMFoodViewController.m */,
 				0F8F5B211931B23100E3E720 /* PMViewController.h */,
 				0F8F5B221931B23100E3E720 /* PMViewController.m */,
+				0F4EB3DE1933796600B961E3 /* PMAboutViewController.h */,
+				0F4EB3DF1933796600B961E3 /* PMAboutViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -490,6 +495,7 @@
 				0FF24D49193106D400F44222 /* PMAppDelegate.m in Sources */,
 				0F8F5ADB19314E5200E3E720 /* PMExercise.m in Sources */,
 				0F8F5B161931A58700E3E720 /* PMFoodViewController.m in Sources */,
+				0F4EB3E01933796600B961E3 /* PMAboutViewController.m in Sources */,
 				0F8F5AB5193118DA00E3E720 /* PMCategory+CoreData.m in Sources */,
 				0F8F5B1D1931AE9100E3E720 /* PMExerciseCell.m in Sources */,
 				0F8F5B051931939A00E3E720 /* PMFood.m in Sources */,
