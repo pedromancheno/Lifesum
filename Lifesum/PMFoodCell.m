@@ -24,9 +24,9 @@
 - (void)setObject:(PMFood *)food
 {
     self.nameLabel.text = food.name;
-    self.caloriesLabel.text = food.calories.stringValue;
-    self.proteinLabel.text = food.protein.stringValue;
-    self.sodiumLabel.text = food.sodium.stringValue;
+    self.caloriesLabel.text = [NSString stringWithFormat:NSLocalizedString(@"calories: %@", nil), food.calories.stringValue];
+    self.proteinLabel.text = [NSString stringWithFormat:NSLocalizedString(@"protein: %@", nil), food.protein.stringValue];
+    self.sodiumLabel.text = [NSString stringWithFormat:NSLocalizedString(@"sodium: %@", nil), food.sodium.stringValue];
 }
 
 @end

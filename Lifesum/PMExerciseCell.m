@@ -22,7 +22,7 @@
 - (void)setObject:(PMExercise *)exercise
 {
     self.nameLabel.text = exercise.name;
-    self.caloriesLabel.text = exercise.calories.stringValue;
+    self.caloriesLabel.text = [NSString stringWithFormat:NSLocalizedString(@"calories: %@", nil), exercise.calories.stringValue];
 }
 
 @end
