@@ -9,9 +9,12 @@
 #import <CoreData/CoreData.h>
 
 @interface PMViewController : UIViewController
-<NSFetchedResultsControllerDelegate>
+<NSFetchedResultsControllerDelegate,
+UITableViewDelegate,
+UITableViewDataSource>
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (readonly, nonatomic) NSString *associatedEntityName;
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
 
 @end

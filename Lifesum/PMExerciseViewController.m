@@ -15,24 +15,10 @@
 
 
 @interface PMExerciseViewController ()
-<UITableViewDataSource,
-UITableViewDelegate>
-
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
 @implementation PMExerciseViewController
-
-#pragma mark - NSFetchedResultsController delegate
-
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-
-{
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-    
-}
 
 #pragma mark - UITableViewCell data source
 
