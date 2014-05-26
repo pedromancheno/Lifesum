@@ -4,6 +4,7 @@ platform :ios, "7.0"
 target "Lifesum" do
 
 pod 'AFNetworking', '2.2.4'
+pod 'FormatterKit'
 
 end
 
