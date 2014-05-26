@@ -8,11 +8,55 @@
 
 #import "PMAppDelegate.h"
 
+#import "PMCoreDataHelper.h"
+
+#import "PMAPIClient.h"
+
 @implementation PMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [[PMCoreDataHelper sharedInstance] setupCoreDataStack];
+    
+    [[PMAPIClient sharedClient] foodWithCompletion:^(BOOL success, NSArray *objects, NSError *error) {
+        if (!success) {
+            UIAlertView *alertView =
+            [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil)
+                                       message:NSLocalizedString(@"There was an error trying to load food remotely", nil)
+                                      delegate:self
+                             cancelButtonTitle:NSLocalizedString(@"Ok", nil)
+                             otherButtonTitles:nil];
+            
+            [alertView show];
+        }
+    }];
+    
+    [[PMAPIClient sharedClient] exercisesWithCompletion:^(BOOL success, NSArray *objects, NSError *error) {
+        if (!success) {
+            UIAlertView *alertView =
+            [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil)
+                                       message:NSLocalizedString(@"There was an error trying to load exercises remotely", nil)
+                                      delegate:self
+                             cancelButtonTitle:NSLocalizedString(@"Ok", nil)
+                             otherButtonTitles:nil];
+            
+            [alertView show];
+        }
+    }];
+    
+    [[PMAPIClient sharedClient] categoriesWithCompletion:^(BOOL success, NSArray *objects, NSError *error) {
+        if (!success) {
+            UIAlertView *alertView =
+            [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil)
+                                       message:NSLocalizedString(@"There was an error trying to load categories remotely", nil)
+                                      delegate:self
+                             cancelButtonTitle:NSLocalizedString(@"Ok", nil)
+                             otherButtonTitles:nil];
+            
+            [alertView show];
+        }
+    }];
+    
     return YES;
 }
 							
