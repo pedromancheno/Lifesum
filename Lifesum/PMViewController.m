@@ -25,6 +25,14 @@
     self.fetchedResultsController.delegate = self;
 }
 
+#pragma mark - NSFetchedResultsController delegate
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+
+{
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
 #pragma mark - Lazy loading
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -55,6 +63,18 @@
 {
     // Override!
     return nil;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Override!
+    return nil;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Override!
+    return 0;
 }
 
 @end

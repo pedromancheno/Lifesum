@@ -12,11 +12,6 @@
 #import "PMFoodCell.h"
 
 @interface PMFoodViewController ()
-<UITableViewDelegate,
-UITableViewDataSource>
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-
 
 @end
 

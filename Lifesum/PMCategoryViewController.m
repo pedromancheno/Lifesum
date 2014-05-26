@@ -14,10 +14,6 @@
 #import "PMAPIClient.h"
 
 @interface PMCategoryViewController ()
-<UITableViewDataSource,
-UITableViewDelegate>
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
